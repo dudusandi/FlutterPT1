@@ -5,6 +5,7 @@ void main() {
   runApp(const MyApp());
 }
 
+Color Mycolor = Color(0xfff3f3f3);
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -30,14 +31,17 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
+
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),backgroundColor: Color.fromRGBO(243, 243, 243, 1),
+        backgroundColor: Theme.of(context).primaryColor,
+        title: Text(
+            widget.title),
+
+      ),backgroundColor: Color(0xfff3f3f3),
       body: Center(
         
         child: Column(
@@ -61,12 +65,18 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: ElevatedButton(
-                    onPressed: btn,
                     child: Text(
                       style: TextStyle(fontSize: 18, color: Colors.white),
+
                         "Nova Musica"
-                    ),
+                    ), onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Home()),
+                  );
+                },
                   style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color.fromRGBO(166, 96, 204, 1))),
+
                 ),
               ),
             ),
@@ -90,7 +100,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child:
-                    ElevatedButton(onPressed: btn, child: 
+                    ElevatedButton(onPressed: btn, child:
                     Text(
                         style: TextStyle(fontSize: 18, color: Colors.white),
                         "Novo Exercicio"
@@ -118,4 +128,8 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-void btn() {}
+void btn() {
+
+
+
+}

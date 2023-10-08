@@ -5,7 +5,6 @@ void main() {
   runApp(const MyApp());
 }
 
-Color Mycolor = Color(0xfff3f3f3);
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
